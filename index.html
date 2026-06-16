@@ -1,4 +1,159 @@
-<img src="img/9.jpg" style="width:100%">
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playwrite+GB+J:ital,wght@0,100..400;1,100..400&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Iosevka+Charon:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.13.1/font/bootstrap-icons.min.css" integrity="sha512-t7Few9xlddEmgd3oKZQahkNI4dS6l80+eGEzFQiqtyVYdvcSG2D3Iub77R20BdotfRPA9caaRkg1tyaJiPmO0g==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+<style>
+* {
+  box-sizing: border-box;
+  font-family: "Iosevka Charon", monospace;
+  padding: 10px;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.header {
+  text-align: center;
+  padding: 32px;
+}
+.header h1{
+  font-family: "Playwrite GB J", cursive;
+  text-align: center;
+  font-size: 30px;
+}
+.header h2{
+      text-align: center;
+      font-family: "Playwrite GB J", cursive;
+      font-size: 15px;
+    }
+p{
+  font-size: 20px;
+  text-align: center;
+}
+.row {
+  display: -ms-flexbox; /* IE 10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE 10 */
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+
+/* Create two equal columns that sits next to each other */
+.column {
+  -ms-flex: 50%; /* IE 10 */
+  flex: 50%;
+  padding: 0 4px;
+}
+
+.column img {
+  margin-top: 8px;
+  vertical-align: middle;
+  cursor: pointer; /* Added pointer cursor to indicate clickability */
+  transition: 0.3s; /* Smooth hover effect */
+}
+
+.column img:hover {
+  opacity: 0.8; /* Slight dimming on hover */
+}
+
+/* Style the buttons */
+.btn {
+  margin: 0px;
+  border: 1px solid black;
+  outline: none;
+  padding: 5px;
+  cursor: pointer;
+  font-size: 18px;
+  background-color: transparent;
+}
+
+.btn:hover {
+  background-color: #ddd;
+}
+
+.btn.active {
+  background-color: #666;
+  color: white;
+}
+
+/* --- NEW MODAL CSS BELOW --- */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 999; /* Sit on top of everything */
+  padding-top: 50px; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgba(0,0,0,0.9); /* Black background with opacity */
+}
+
+.modal-content {
+  margin: auto;
+  display: block;
+  max-width: 90%;
+  max-height: 75vh;
+  object-fit: contain; /* Ensures the image aspect ratio stays intact */
+  padding: 0; /* Override the global * padding */
+}
+
+#caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  text-align: center;
+  color: #ccc;
+  padding: 15px 0;
+  font-size: 18px;
+}
+
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+  cursor: pointer;
+  padding: 0; /* Override the global * padding */
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+</style>
+</head>
+<body>
+
+<div class="header" id="myHeader">
+  <h1>Clicks</h1>
+  <h2>by Tasrif</h2>
+  <p>Moments captured through my phone lens. Just everyday life, framed.</p>
+  <div class="btn-div">
+    <button class="btn" style="border-radius: 25px 0px 0px 25px;" onclick="one()"><i class="bi bi-square-fill"></i></button>
+    <button class="btn active" onclick="two()"><i class="bi bi-grid-fill"></i></button>
+    <button class="btn" style="border-radius: 0px 25px 25px 0px;" onclick="four()"><i class="bi bi-grid-3x3-gap-fill"></i></button>
+  </div>
+</div>
+
+<div class="row"> 
+  <div class="column">
+    <img src="img/9.jpg" style="width:100%">
     <img src="img/8.jpg" style="width:100%">
   </div>
   <div class="column">
