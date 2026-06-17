@@ -9,6 +9,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Iosevka+Charon:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.13.1/font/bootstrap-icons.min.css" integrity="sha512-t7Few9xlddEmgd3oKZQahkNI4dS6l80+eGEzFQiqtyVYdvcSG2D3Iub77R20BdotfRPA9caaRkg1tyaJiPmO0g==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@400..800&display=swap" rel="stylesheet">
 <style>
 * {
   box-sizing: border-box;
@@ -40,15 +43,15 @@ p{
   text-align: center;
 }
 .row {
-  display: -ms-flexbox; /* IE 10 */
+  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap; /* IE 10 */
+  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   padding: 0 4px;
 }
 
 .column {
-  -ms-flex: 50%; /* IE 10 */
+  -ms-flex: 50%;
   flex: 50%;
   padding: 0 4px;
 }
@@ -113,6 +116,22 @@ p{
   color: #ccc;
   padding: 15px 0;
   font-size: 18px;
+  line-height: 1.5; 
+}
+
+/* --- THIS IS YOUR NEW DESCRIPTION FONT CLASS --- */
+.desc-text {
+  /* Change this font-family to whatever you want later! */
+    font-family: "Baloo Da 2", sans-serif; 
+  font-size: 20px; 
+  color: #eeeeee; 
+  display: inline-block;
+  margin-top: 8px; 
+}
+.desc-date{
+  font-family: "Playwrite GB J", cursive;
+  font-size: 16px;
+  font-style: italic;
 }
 
 .close {
@@ -137,7 +156,6 @@ p{
 </head>
 <body>
 
-<!-- Header -->
 <div class="header" id="myHeader">
   <h1>Clicks</h1>
   <h2>by Tasrif</h2>
@@ -149,35 +167,32 @@ p{
   </div>
 </div>
 
-<!-- Photo Grid -->
 <div class="row"> 
   <div class="column">
-    <!-- Add data-date="..." to each image -->
-    <img src="img/9.jpg" style="width:100%" data-date="October 24, 2023">
-    <img src="img/8.jpg" style="width:100%" data-date="November 12, 2023">
+    <img src="img/goat1.jpg" style="width:100%" data-date="June 17, 2026" data-desc="Beyond description<br>Greatest of All Time">
+    <img src="img/9.jpg" style="width:100%" data-date="June 16, 2026" data-desc="যুগে যুগে জড় জীব সবে পড়ে রবে নিবিড় অবেলায়...">
+    <img src="img/8.jpg" style="width:100%" data-date="June 15, 2026" data-desc="এই পাঁজরভরা ভালোবাসা দু'হাত ভরে নাও<br>এই আধো আলো আধো ছায়া দু'চোখ ভরে নাও">
   </div>
   <div class="column">
-    <img src="img/10.jpg" style="width:100%" data-date="December 5, 2023">
-    <img src="img/6.jpg" style="width:100%" data-date="January 1, 2024">
-    <img src="img/5.jpg" style="width:100%" data-date="February 14, 2024">
+    <img src="img/10.jpg" style="width:100%" data-date="June 16, 2026" data-desc="জীবনের গান গেছে হারিয়ে<br>একা দাঁড়িয়ে অপেক্ষায়">
+    <img src="img/6.jpg" style="width:100%" data-date="June 15, 2026" data-desc="🌺">
+    <img src="img/5.jpg" style="width:100%" data-date="June 15, 2026" data-desc="BD">
   </div>  
   <div class="column">
-    <img src="img/4.jpg" style="width:100%" data-date="March 10, 2024">
-    <img src="img/3.jpg" style="width:100%" data-date="April 22, 2024">
-    <img src="img/7.jpg" style="width:100%" data-date="May 5, 2024">
+    <img src="img/4.jpg" style="width:100%" data-date="June 15, 2026" data-desc="🐎">
+    <img src="img/3.jpg" style="width:100%" data-date="June 15, 2026" data-desc="">
+    <img src="img/7.jpg" style="width:100%" data-date="June 15, 2026" data-desc="Rainy reflections.">
   </div>
   <div class="column">
-    <img src="img/0.jpg" style="width:100%" data-date="June 1, 2024">
-    <img src="img/1.jpg" style="width:100%" data-date="June 15, 2024">    
-    <img src="img/2.jpg" style="width:100%" data-date="July 4, 2024">
+    <img src="img/0.jpg" style="width:100%" data-date="June 15, 2026" data-desc="Diego Armando Maradona">
+    <img src="img/1.jpg" style="width:100%" data-date="June 15, 2026" data-desc="Sunset...">    
+    <img src="img/2.jpg" style="width:100%" data-date="June 15, 2026" data-desc="🐎">
   </div>
 </div>
 
-<!-- Modal HTML -->
 <div id="imageModal" class="modal">
   <span class="close" onclick="closeModal()">&times;</span>
   <img class="modal-content" id="modalImg">
-  <!-- This is now completely empty by default -->
   <div id="caption"></div> 
 </div>
 
@@ -219,7 +234,7 @@ for (var i = 0; i < btns.length; i++) {
 // Modal Script
 var modal = document.getElementById("imageModal");
 var modalImg = document.getElementById("modalImg");
-var captionText = document.getElementById("caption"); // Grab the caption div
+var captionText = document.getElementById("caption"); 
 
 var gridImages = document.querySelectorAll(".column img");
 
@@ -227,8 +242,13 @@ gridImages.forEach(function(img) {
   img.onclick = function() {
     modal.style.display = "block";
     modalImg.src = this.src; 
-    // Pull the specific date from the clicked image's data-date attribute
-    captionText.innerHTML = this.getAttribute("data-date"); 
+    
+    // Grab only the date and description
+    var photoDate = this.getAttribute("data-date");
+    var photoDesc = this.getAttribute("data-desc");
+    
+    // Format: Bold Date, line break, custom styled Description
+    captionText.innerHTML = "<strong><span class='desc-date'>" + "Uploaded on " + photoDate + "</span>" + "</strong><br><span class='desc-text'>" + photoDesc + "</span>";
   }
 });
 
